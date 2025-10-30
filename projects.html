@@ -23,10 +23,11 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       background-color: var(--bg);
       color: #e6eef6;
       -webkit-font-smoothing: antialiased;
@@ -39,11 +40,12 @@
       margin: 0 auto;
     }
 
+    /* ---------- HEADER ---------- */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 48px;
+      margin-bottom: 60px;
     }
 
     .brand {
@@ -62,6 +64,16 @@
       justify-content: center;
       font-weight: 700;
       color: #08101a;
+      font-size: 16px;
+    }
+
+    .brand div div:first-child {
+      font-weight: 700;
+    }
+
+    .brand div div:last-child {
+      font-size: 13px;
+      color: var(--muted);
     }
 
     nav a {
@@ -69,20 +81,40 @@
       text-decoration: none;
       margin-left: 18px;
       font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a.active {
       color: #fff;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 4px;
     }
 
-    nav a:hover, nav a.active {
-      color: var(--accent);
+    nav a.active::after {
+      width: 100%;
     }
 
+    /* ---------- CONTENT ---------- */
     h1 {
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 800;
       margin-bottom: 12px;
     }
@@ -90,8 +122,10 @@
     p {
       color: var(--muted);
       max-width: 800px;
+      margin-bottom: 40px;
     }
 
+    /* ---------- PROJECT CARD ---------- */
     .project {
       background: var(--glass);
       padding: 28px;
@@ -102,24 +136,29 @@
       gap: 28px;
       align-items: center;
       box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 45px rgba(124, 92, 255, 0.15);
     }
 
     .project img {
       width: 100%;
       border-radius: var(--radius);
-      background: #1a2232;
       object-fit: cover;
+      background: #1a2232;
     }
 
     .project-content h2 {
       font-size: 24px;
-      margin-top: 0;
       margin-bottom: 8px;
       color: #fff;
     }
 
     .project-content p {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .user-flow {
@@ -133,18 +172,30 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       color: var(--muted);
       font-size: 13px;
       text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 900px) {
       .project {
         grid-template-columns: 1fr;
       }
+
+      body {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
     }
 
+    /* ---------- SCROLL REVEAL ---------- */
     .reveal {
       opacity: 0;
       transform: translateY(12px);
@@ -157,14 +208,16 @@
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+    <!-- HEADER -->
     <header>
       <div class="brand">
         <div class="logo" aria-hidden>SK</div>
         <div>
-          <div style="font-weight:700">Sandeep Kumar</div>
-          <div style="font-size:13px;color:var(--muted)">UI/UX Designer — Product & Interaction</div>
+          <div>Sandeep Kumar</div>
+          <div>UI/UX Designer — Product & Interaction</div>
         </div>
       </div>
       <nav>
@@ -175,43 +228,44 @@
       </nav>
     </header>
 
+    <!-- MAIN -->
     <main>
       <h1 class="reveal">Featured Projects</h1>
-      <p class="reveal">Here are some of my selected UI/UX design projects, complete with case studies, research insights, and user flow breakdowns.</p>
+      <p class="reveal">Here are some of my selected UI/UX design projects — including full case studies, research insights, and user flow breakdowns.</p>
 
       <!-- Project 1 -->
       <section class="project reveal">
-        <img src="assets/project1.jpg" alt="Project 1 Screenshot">
+        <img src="assets/project1.jpg" alt="Food Delivery App">
         <div class="project-content">
           <h2>Food Delivery App Redesign</h2>
-          <p>Redesigned a food delivery app focusing on simplifying the checkout flow, improving restaurant discovery, and creating a smoother overall user journey.</p>
+          <p>Redesigned a food delivery app focusing on simplifying checkout flow, improving restaurant discovery, and creating a smoother user journey.</p>
           <div class="user-flow">User Flow Diagram Placeholder</div>
         </div>
       </section>
 
       <!-- Project 2 -->
       <section class="project reveal">
-        <img src="assets/project2.jpg" alt="Project 2 Screenshot">
+        <img src="assets/project2.jpg" alt="E-Commerce Dashboard">
         <div class="project-content">
           <h2>E-Commerce Dashboard</h2>
-          <p>Created an analytics dashboard for sellers with clear data visualization, filters, and quick navigation to help improve daily decision-making.</p>
+          <p>Created an analytics dashboard for sellers with clear data visualization and smart filters to improve decision-making.</p>
           <div class="user-flow">User Flow Diagram Placeholder</div>
         </div>
       </section>
 
       <!-- Project 3 -->
       <section class="project reveal">
-        <img src="assets/project3.jpg" alt="Project 3 Screenshot">
+        <img src="assets/project3.jpg" alt="Healthcare System">
         <div class="project-content">
           <h2>Healthcare Booking System</h2>
-          <p>Designed a seamless booking experience for patients to find doctors, schedule appointments, and track health reports efficiently.</p>
+          <p>Designed a seamless booking experience for patients to find doctors, schedule appointments, and manage health records efficiently.</p>
           <div class="user-flow">User Flow Diagram Placeholder</div>
         </div>
       </section>
 
       <!-- Project 4 -->
       <section class="project reveal">
-        <img src="assets/project4.jpg" alt="Project 4 Screenshot">
+        <img src="assets/project4.jpg" alt="Travel Planner App">
         <div class="project-content">
           <h2>Travel Planner App</h2>
           <p>Developed an intuitive interface to help users plan, organize, and share trip itineraries while tracking expenses in real-time.</p>
@@ -220,21 +274,22 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-      <div> © 2025 Sandeep | UI/UX Designer Portfolio</div>
+      © 2025 Sandeep Kumar | UI/UX Designer Portfolio
     </footer>
   </div>
 
   <script>
-    const revealEls = Array.from(document.querySelectorAll('.reveal'));
-    const onScroll = () => {
-      const top = window.scrollY + window.innerHeight * 0.85;
+    const revealEls = document.querySelectorAll('.reveal');
+    const reveal = () => {
+      const trigger = window.scrollY + window.innerHeight * 0.85;
       revealEls.forEach(el => {
-        if (el.getBoundingClientRect().top + window.scrollY < top) el.classList.add('on');
+        if (el.offsetTop < trigger) el.classList.add('on');
       });
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll);
+    reveal();
+    window.addEventListener('scroll', reveal);
   </script>
 </body>
 </html>
