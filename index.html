@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sandeep Kumar — UI/UX Designer</title>
+  <meta name="description" content="Sandeep Kumar — UI/UX Designer. Portfolio, case studies, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #7c5cff;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, #07101b 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  padding: 32px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #4dd0e1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #08101a;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+}
+
+nav a.active {
+  color: #fff;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+}
+
+.cta-small {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: center;
+}
+
+.intro {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(124, 92, 255, 0.08);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 4px 0 8px;
+}
+
+h1 .name {
+  display: block;
+  font-weight: 800;
+}
+
+p.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.role {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(124, 92, 255, 0.12), rgba(77, 208, 225, 0.04));
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), #4dd0e1);
+  color: #07101a;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.meta .card {
+  background: var(--glass);
+  padding: 12px;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.meta .num {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.skills {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.profile-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.profile-meta {
+  text-align: center;
+}
+
+.small-muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.accent-shape {
+  position: fixed;
+  right: -120px;
+  top: 60px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 92, 255, 0.18), rgba(77, 208, 225, 0.05));
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+footer {
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- RESPONSIVE SECTION ---------- */
+
+/* Tablet view */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 24px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="accent-shape" aria-hidden="true"></div>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>SK</div>
+        <div>
+          <div style="font-weight:700">Sandeep Kumar</div>
+          <div class="small-muted">UI/UX Designer — Product & Interaction</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+         <a href="#home" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+       
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="intro">
+        <span class="eyebrow reveal">Design that moves people</span>
+        <h1 class="reveal">Hi, I'm <span class="name">Sandeep Kumar</span></h1>
+        <div class="role reveal">Product & Interaction Designer — UI/UX</div>
+        <p class="lead reveal">I design clear, usable interfaces and build case studies that show measurable outcomes — from research and flows to high-fidelity prototypes. I focus on product clarity, usability, and business impact.</p>
+
+        <div class="actions reveal">
+          <button class="btn btn-primary" onclick="scrollToSection('projects')">See Projects</button>
+          <a class="btn btn-ghost" href="contact.html">Contact</a>
+        </div>
+
+        <div class="meta reveal" aria-hidden>
+          <div class="card">
+            <div class="num">6+</div>
+            <div class="small-muted">Years experience</div>
+          </div>
+          <div class="card">
+            <div class="num">12</div>
+            <div class="small-muted">Case studies</div>
+          </div>
+          <div class="card">
+            <div class="num">50+</div>
+            <div class="small-muted">Screens designed</div>
+          </div>
+        </div>
+
+        <div class="skills reveal" aria-hidden>
+          <span class="chip">User Research</span>
+          <span class="chip">Interaction Design</span>
+          <span class="chip">Prototyping (Figma)</span>
+          <span class="chip">Usability Testing</span>
+        </div>
+
+      </section>
+
+      <aside class="profile-card">
+        <div class="avatar" aria-hidden>SK</div>
+        <div class="profile-meta">
+          <div style="font-weight:800">Sandeep Kumar</div>
+          <div class="small-muted">UI/UX Designer</div>
+        </div>
+        <div style="text-align:center;color:var(--muted);font-size:14px">I turn complex problems into simple, useful interfaces. Open to product design roles and freelance collaborations.</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          
+         <a href="./sandeepUIUXcv.pdf" download>Download CV</a>
+
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small-muted"> If Any Issue Call Me Pls!</div>
+    </footer>
+  </div>
+
+  <script>
+    const revealEls = Array.from(document.querySelectorAll('.reveal'));
+    const onScroll = () => {
+      const top = window.scrollY + window.innerHeight * 0.85;
+      revealEls.forEach(el => {
+        if (el.getBoundingClientRect().top + window.scrollY < top) el.classList.add('on');
+      });
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id) || document.querySelector("[href='#" + id + "']");
+      if (el && el.scrollIntoView) {
+        if (typeof el === 'object' && el.getBoundingClientRect) {
+          const target = document.getElementById(id);
+          if (target) return target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('nav a, .btn').forEach(el => el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') el.click();
+    }));
+  </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Sandeep Kumar</title>
+  <meta name="description" content="UI/UX Design Projects and Case Studies by Sandeep Kumar" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #7c5cff;
+      --glass: rgba(255, 255, 255, 0.03);
+      --radius: 14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      padding: 32px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #4dd0e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #08101a;
+      font-size: 16px;
+    }
+
+    .brand div div:first-child {
+      font-weight: 700;
+    }
+
+    .brand div div:last-child {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active {
+      color: #fff;
+    }
+
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* ---------- CONTENT ---------- */
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    /* ---------- PROJECT CARD ---------- */
+    .project {
+      background: var(--glass);
+      padding: 28px;
+      border-radius: var(--radius);
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 45px rgba(124, 92, 255, 0.15);
+    }
+
+    .project img {
+      width: 70%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      background: #1a2232;
+    }
+
+    .project-content h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .project-content p {
+      margin-bottom: 14px;
+    }
+
+    .user-flow {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius);
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      border: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 600ms cubic-bezier(.2, .9, .3, 1);
+    }
+
+    .reveal.on {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>SK</div>
+        <div>
+          <div>Sandeep Kumar</div>
+          <div>UI/UX Designer — Product & Interaction</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <h1 class="reveal">Featured Projects</h1>
+      <p class="reveal">Here are some of my selected UI/UX design projects — including full case studies, research insights, and user flow breakdowns.</p>
+
+      <!-- Project 1 -->
+      <section class="project reveal">
+        <img src="Assets/food delivery app home page.png" alt="Food Delivery App">
+        <div class="project-content">
+          <h2>Food Delivery App</h2>
+          <p>Redesigned a food delivery app focusing on simplifying checkout flow, improving restaurant discovery, and creating a smoother user journey.</p>
+           <p><strong>Problem:</strong> Users were abandoning orders during checkout.</p>
+           <p><strong>Goal:</strong> Simplify the checkout process and improve navigation.</p>
+           <p><strong>Process:</strong> Conducted user research, redesigned the checkout flow, and created interactive prototypes.</p>
+           <p><strong>Solution:</strong> Reduced checkout steps from 6 to 3, improved user completion rate by 30%.</p>
+           <a href="https://www.figma.com/proto/FQgqu8ODP6qP3tPrEKmZYp/food-delivery-app?page-id=0%3A1&node-id=54-461&viewport=276%2C239%2C0.2&t=5azpqeasYe6FnYpb-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=36%3A2&show-proto-sidebar=1" target="_blank" class="btn">View Prototype</a><br><br>
+            <a href="" class="btn">View Case Study    (Currently not add)</a><br><br>
+          <div class="user-flow"> <img src="Assets/food delivery app user flow diagram.png" alt=""></div>
+        </div>
+      </section>
+
+      <!-- Project 2 -->
+      <section class="project reveal">
+        <img src="Assets/flipkart home page.png" alt="Mini flipkart replica">
+        <div class="project-content">
+          <h2>Mini flipkart replica</h2>
+           <p><strong>Problem:</strong> Beginners in UI/UX often struggle to understand the structure of large-scale e-commerce platforms like Flipkart.</p>
+           <p><strong>Goal:</strong> Create a simplified yet realistic e-commerce design that mirrors Flipkart’s core shopping experience — focusing on layout, product cards, and user flow.</p>
+           <p><strong>Process:</strong> Analyzed Flipkart’s UI patterns, designed responsive pages including home, product, and cart sections, and added modern visual elements with gradients and shadows.</p>
+           <p><strong>Solution:</strong> Built a clean, modern mini version of Flipkart that showcases strong UI structure, visual hierarchy, and usability principles for e-commerce design.</p>
+           <a href="https://www.figma.com/proto/4RlKJbGvbe9mW6zJJ0ngxn/flipkart-replica?page-id=0%3A1&node-id=9-2485&p=f&viewport=193%2C312%2C0.07&t=Y142K5U1vuWDla2S-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=11%3A2713" target="_blank" class="btn">View Prototype</a><br><br>
+            <a href="" class="btn">View Case Study    (Currently not add)</a><br><br>
+          <div class="user-flow"> <img src="Assets/flipkart user flow diagram.png" alt=""></div>
+         </div>
+      </section>
+
+      <!-- Project 3 -->
+      <section class="project reveal">
+        <img src="Assets/healthcare booking homepage.png" alt="Healthcare System">
+        <div class="project-content">
+          <h2>Healthcare Booking System</h2>
+           <p><strong>Problem:</strong> Patients faced difficulty finding the right doctors for their symptoms and managing appointments efficiently.</p>
+           <p><strong>Goal:</strong> Create an intuitive platform where users can enter their symptoms, find relevant specialists, book appointments, and make secure payments — all in one place.</p>
+           <p><strong>Process:</strong> Researched user pain points in existing healthcare apps, designed symptom-based search, integrated doctor profiles, appointment booking flow, and a simple payment interface. Focused on accessibility and clarity for all age groups.</p>
+           <p><strong>Solution:</strong> Delivered a clean, trustworthy interface that reduces appointment booking time by 40%, improves user confidence, and enhances doctor discovery through intelligent symptom mapping.</p>
+           <a href="https://www.figma.com/proto/YKFZVPrLwfyb50OllLFsy1/Healthcare-Booking-System?page-id=0%3A1&node-id=3-154&p=f&viewport=354%2C154%2C0.39&t=2xhodFAV5hBcYCKD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A154" target="_blank" class="btn">View Prototype</a><br><br>
+           <a href="" class="btn">View Case Study    (Currently not add)</a><br><br>
+          <div class="user-flow"> <img src="Assets/healthcare booking user flow diagram.png" alt=""></div>
+        </div>
+      </section>
+
+      <!-- Project 4 -->
+      <section class="project reveal">
+        <img src="Assets/gt portfolio app home page.png" alt="Digital Marketing Agency Website">
+        <div class="project-content">
+          <h2> GT Digital Marketing Agency Website</h2>
+          <p><strong>Problem:</strong> The client’s previous site lacked clear service communication and failed to generate leads effectively.</p>
+          <p><strong>Goal:</strong> Design a modern, conversion-focused website that clearly presents services like content creation, video editing, and Meta/Google ads management.</p>
+          <p><strong>Process:</strong> Conducted competitive analysis of top marketing agencies, structured the layout for clarity, used a clean typography system, and emphasized call-to-action placement for higher engagement.</p>
+          <p><strong>Solution:</strong> Delivered a visually appealing, responsive website that highlights agency strengths, improves service discoverability, and enhances trust with potential clients.</p>
+          <a href="https://www.figma.com/proto/your-digital-agency-prototype-link" target="_blank" class="btn">View Prototype</a><br><br>
+          <a href="" class="btn">View Case Study    (Currently not add)</a><br><br>
+          <div class="user-flow"> <img src="Assets/gt marketing agency flow diagram.png" alt=""></div>
+        </div>
+      </section>
+
+       <!-- Project 5 -->
+      <section class="project reveal">
+        <img src="Assets/health track app home page.png" alt="Health Tracking App">
+        <div class="project-content">
+          <h2>Health Tracking App</h2>
+           <p><strong>Problem:</strong> Users often rely on multiple apps to track fitness, sleep, diet, and health stats — leading to confusion and inconsistent data insights.</p>
+           <p><strong>Goal:</strong> Build an all-in-one health tracking platform that syncs seamlessly with smartwatches and provides users with a holistic view of their wellness.</p>
+           <p><strong>Process:</strong> Researched user habits and common issues in existing fitness apps, designed dashboards for daily activity, sleep, nutrition, and workout insights. Created data visualization screens for calories, protein intake, and heart rate tracking integrated with wearable devices.</p>
+           <p><strong>Solution:</strong> Designed a unified health dashboard that lets users track all key metrics (steps, heart rate, calories, sleep, workouts) from one screen — reducing app switching by 70% and improving goal consistency through smart reminders and clean visual analytics.</p>
+           <a href="https://www.figma.com/proto/JHMp5n5EWfxDAt5viTnXo4/Health-track-pro?page-id=0%3A1&node-id=1-2&p=f&viewport=-109%2C-3%2C0.56&t=SZhnHVOUCxyr7tT3-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=29%3A471" target="_blank" class="btn">View Prototype</a><br><br>
+           <a href="" class="btn">View Case Study    (Currently not add)</a><br><br>
+           <div class="user-flow"> <img src="Assets/health track app user flow diagram.png" alt=""></div>
+        </div>
+      </section>
+
+       <!-- Project 6 -->
+      <section class="project reveal">
+        <img src="assets/project4.jpg" alt="Travel Planner App">
+        <div class="project-content">
+          <h2>Travel Planner App</h2>
+          <p>Developed an intuitive interface to help users plan, organize, and share trip itineraries while tracking expenses in real-time.</p>
+          <div class="user-flow">User Flow Diagram Placeholder</div>
+        </div>
+      </section>
+
+       <!-- Project 7 -->
+      <section class="project reveal">
+        <img src="assets/project4.jpg" alt="Travel Planner App">
+        <div class="project-content">
+          <h2>Travel Planner App</h2>
+          <p>Developed an intuitive interface to help users plan, organize, and share trip itineraries while tracking expenses in real-time.</p>
+          <div class="user-flow">User Flow Diagram Placeholder</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 Sandeep Kumar | UI/UX Designer Portfolio
+    </footer>
+  </div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const reveal = () => {
+      const trigger = window.scrollY + window.innerHeight * 0.85;
+      revealEls.forEach(el => {
+        if (el.offsetTop < trigger) el.classList.add('on');
+      });
+    };
+    reveal();
+    window.addEventListener('scroll', reveal);
+  </script>
+</body>
+</html>

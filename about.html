@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Sandeep | UI/UX Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: #e2e8f0;
+      --accent: #7c5cff;
+      --muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      background-color: rgba(15, 23, 42, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+   nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a.active {
+  color: #fff;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+ nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+
+
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5% 10%;
+      gap: 3rem;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .skills span {
+      background-color: rgba(255,255,255,0.05);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    .about-img {
+      flex: 1;
+      text-align: center;
+      min-width: 280px;
+    }
+
+    .about-img img {
+      width: 280px;
+      height: 350px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 20px rgba(56,189,248,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .about-text h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sandeep Kumar</h1>
+   <nav aria-label="Primary navigation">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html" class="active">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+  </header>
+
+  <section class="about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hey, I’m <strong>Sandeep</strong> — a passionate <strong>UI/UX Designer</strong> who loves creating clean, intuitive, and user-centered digital experiences. My focus is on turning complex ideas into simple, elegant interfaces that people enjoy using.</p>
+      <p>I’ve worked on multiple projects including mobile apps, websites, and dashboard designs — handling everything from user research to high-fidelity prototypes in tools like Figma.</p>
+      <p>My goal is to design products that are not just visually appealing but also solve real user problems effectively.</p>
+
+      <h3>Core Skills</h3>
+      <div class="skills">
+        <span>UI Design</span>
+        <span>UX Research</span>
+        <span>Wireframing</span>
+        <span>Prototyping</span>
+        <span>Figma</span>
+        <span>Design Systems</span>
+        <span>Usability Testing</span>
+        <span>A/B Testing</span>
+        <span>Low-fidelity</span>
+        <span>High-fidelity</span>
+        <span>Frontend Development</span>
+        <span>Html</span>
+        <span>CSS</span>
+        <span>Java Script</span>
+      </div>
+
+      <h3 style="margin-top:1.5rem;">Experience Summary</h3>
+      <p>🎨 6+ Years in UI/UX Design<br>
+         💼 12+ Case Studies Completed<br>
+         🖥️ 50+ Screens Designed for Real Clients</p>
+    </div>
+
+    <div class="about-img">
+      <img src="sandeep photo.jpg" alt="Sandeep Profile">
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Sandeep | UI/UX Designer Portfolio
+  </footer>
+</body>
+</html>
